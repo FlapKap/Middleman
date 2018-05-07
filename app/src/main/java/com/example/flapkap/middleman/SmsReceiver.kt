@@ -7,6 +7,7 @@ import android.telephony.SmsMessage
 import android.util.Log
 import android.provider.Telephony
 
+private const val TAG = "SmsReceiver"
 
 private val SMS_RECEIVED_ACTION = Telephony.Sms.Intents.SMS_RECEIVED_ACTION
 private val SMS_DELIVERED_ACTION = Telephony.Sms.Intents.SMS_DELIVER_ACTION
@@ -23,7 +24,7 @@ class SmsReceiver: BroadcastReceiver(){
                 phone = message.displayOriginatingAddress,
                 message = message.messageBody
         )
-        Log.i("hwj", sms.toString())
+        Log.i(TAG, sms.toString())
     }
 
 }
